@@ -3,16 +3,17 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "aria2-client-test"
+name = "downpore-core"
 version = "0.1.0"
-description = "Test suite for aria2 BitTorrent functionality"
+description = "BitTorrent client and download management for downpore"
 dependencies = ["aria2p", "torf"]
 
 [project.optional-dependencies]
 test = ["pytest", "pytest-asyncio", "torrentp"]
 
-[tool.setuptools]
-py-modules = []
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["downpore_core*"]
 
 [tool.pytest.ini_options]
 testpaths = ["."]
