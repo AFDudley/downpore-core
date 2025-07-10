@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aria2-client-test"
+version = "0.1.0"
+description = "Test suite for aria2 BitTorrent functionality"
+dependencies = ["aria2p", "torf"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-asyncio", "torrentp"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
